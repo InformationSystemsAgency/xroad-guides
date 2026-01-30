@@ -18,11 +18,6 @@ The X-Road Security Server uses several ports for data exchange between members 
 
 Before deployment, please contact ISAA at x-road@isaa.am to get the configuration anchor and your member code. This information is required for the post-deployment Security Server configuration.
 
-For more information, please refer to:
-1.	[X-Road Official Documentation](https://docs.x-road.global/)
-2.	[X-Road Knowledge Base](https://nordic-institute.atlassian.net/wiki/spaces/XRDKB/overview)
-
-
 ## Virtual Machine deployment using Ansible
 To deploy the Security Server using Ansible, first clone the X-Road Git repository (https://github.com/nordic-institute/X-Road) and go to the ansible folder. In that folder, we need to create the following hosts file:
 
@@ -43,6 +38,9 @@ Where:
 - VM-USER - the user on the virtual machine with sudo access, or root.
 
 X-Road distributions support a setup where the database is installed on the same machine as the server, <span style="color: red;">which we do not recommend</span>, even for testing environments. Instead, specify a remote database instance in the Security Server variable file. Here is an example configuration:
+
+> [!Note] 
+> Please make sure that PostgreSQL listens on the interface connected to the network (the default is localhost), and that pg_hba.conf is configured to accept requests from your network for all users.
 
 ../ansible/vars_files/ss_database.yaml
 ```shell
