@@ -4,7 +4,7 @@
 
 NISS (Nordic Institute for Interoperability Solutions) provides two deployment options:
 
-1. On virtual machines using the [Ansible Playbook](https://github.com/nordic-institute/X-Road/tree/develop/ansible)
+1. On virtual machines using the [Ansible Playbook](https://github.com/nordic-institute/X-Road/tree/develop/development/ansible)
 2. In a Kubernetes cluster using [X-tee Helm Chart](https://koodivaramu.eesti.ee/x-tee/x-road-helm)
 
 Supported operating systems for VM deployments are Ubuntu 22.04 and Red Hat 9. The recommended database for the current version of the Security Server is PostgreSQL 16.
