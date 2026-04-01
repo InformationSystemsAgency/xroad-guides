@@ -8,6 +8,10 @@ NISS (Nordic Institute for Interoperability Solutions) provides two deployment o
 2. In a Kubernetes cluster using [X-tee Helm Chart](https://koodivaramu.eesti.ee/x-tee/x-road-helm)
 
 Supported operating systems for VM deployments are Ubuntu 22.04 and Red Hat 9. The recommended database for the current version of the Security Server is PostgreSQL 16.
+According to X-Road's official documentation, the minimum resource requirements for a single security server are:
+- 2 CPU
+- 4 GB RAM
+- 100 Mbps network interface
 
 The X-Road Security Server uses several ports for data exchange between members and for server administration. These ports are:
 - 5500 (HTTPS) - Public (must be accessible from the internet), used for data exchange between security servers.
