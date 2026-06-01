@@ -19,8 +19,18 @@ The X-Road Security Server uses several ports for data exchange between members 
 Before deployment, please contact ISAA at x-road@isaa.am to get the configuration anchor and your member code. This information is required for the post-deployment Security Server configuration.
 
 ## Virtual Machine deployment using Ansible
-To deploy the Security Server using Ansible, first clone the X-Road Git repository (https://github.com/nordic-institute/X-Road) and go to the ansible folder. In that folder, we need to create the following hosts file:
+To deploy the Security Server using Ansible, first clone the X-Road Git repository (https://github.com/nordic-institute/X-Road), checkout to 7.8.0 tag and go to the ansible folder.
 
+```shell
+cd path/to/working/directory
+
+git clone https://github.com/nordic-institute/X-Road.git
+git checkout 7.8.0
+
+cd ./ansible
+```
+
+In that folder, we need to create the following hosts file:
 ../ansible/hosts/hosts.txt
 ```ini
 [ss_servers]
