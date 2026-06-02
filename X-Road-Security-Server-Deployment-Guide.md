@@ -4,10 +4,14 @@
 
 NISS (Nordic Institute for Interoperability Solutions) provides two deployment options:
 
-1. On virtual machines using the [Ansible Playbook](https://github.com/nordic-institute/X-Road/tree/develop/development/ansible)
+1. On virtual machines using the [Ansible Playbook](https://github.com/nordic-institute/X-Road/tree/master/ansible)
 2. In a Kubernetes cluster using [X-tee Helm Chart](https://koodivaramu.eesti.ee/x-tee/x-road-helm)
 
 Supported operating systems for VM deployments are Ubuntu 24.04 and Red Hat 9. The recommended database for the current version of the Security Server is PostgreSQL 16.
+According to X-Road's official documentation, the minimum resource requirements for a single security server are:
+- 2 CPU
+- 4 GB RAM
+- 100 Mbps network interface
 
 The X-Road Security Server uses several ports for data exchange between members and for server administration. These ports are:
 - 5500 (HTTPS) - Public (must be accessible from the internet), used for data exchange between security servers.
@@ -19,8 +23,7 @@ The X-Road Security Server uses several ports for data exchange between members 
 Before deployment, please contact ISAA at x-road@isaa.am to get the configuration anchor and your member code. This information is required for the post-deployment Security Server configuration.
 
 ## Virtual Machine deployment using Ansible
-To deploy the Security Server using Ansible, first clone the X-Road Git repository (https://github.com/nordic-institute/X-Road), checkout to 7.8.0 tag and go to the ansible folder.
-
+To deploy the Security Server using Ansible, first clone the X-Road Git repository ([https://github.com/nordic-institute/X-Road](https://github.com/nordic-institute/X-Road/tree/master), checkout to 7.8.0 tag and go to the ansible folder
 ```shell
 cd path/to/working/directory
 
@@ -31,6 +34,7 @@ cd ./ansible
 ```
 
 In that folder, we need to create the following hosts file:
+
 ../ansible/hosts/hosts.txt
 ```ini
 [ss_servers]
